@@ -1,0 +1,34 @@
+{
+  "config": {
+    "items": [
+      {
+        "infra": {
+          "name": "ypcb003381p1", 
+          "display": "YPCB-00338-1P1 Accelerator Card", 
+          "revision": "1.0", 
+          "description": "YPCB-00338-1P1 Accelerator Card", 
+          "company": "tiferking.cn", 
+          "company_display": "TiferKing", 
+          "author": "TiferKing", 
+          "contributors": [
+            {
+              "group": "TiferKing", 
+              "url": "www.tiferking.cn"
+            }
+          ], 
+          "category": "Single Part",
+          "logo": "ypcb003381p1_image.jpg",
+          "website": "https://www.tiferking.cn/index.php/2024/12/19/650/", 
+          "search-keywords": [
+            "ypcb003381p1", 
+            "tiferking.cn", 
+            "board", 
+            "Single Part"
+          ]
+        }
+      }
+    ]
+  },
+  "_major": 1,
+  "_minor": 0
+}

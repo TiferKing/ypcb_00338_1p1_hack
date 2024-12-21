@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<board schema_version="2.2" vendor="tiferking.cn" name="ypcb003381p1" display_name="YPCB-00338-1P1 Accelerator Card" url="https://www.tiferking.cn/index.php/2024/12/19/650/" preset_file="preset.xml" supports_ced="false"> 
+  <images> 
+    <image name="ypcb003381p1_image.jpg" display_name="YPCB-00338-1P1 Accelerator Card" sub_type="board" resolution="high"> 
+      <description>YPCB-00338-1P1 Accelerator Card</description> 
+    </image> 
+  </images>  
+  <compatible_board_revisions> 
+    <revision id="0">1.0</revision> 
+  </compatible_board_revisions>  
+  <file_version>1.0</file_version>  
+  <description>YPCB-00338-1P1 Accelerator Card</description>  
+  <parameters> 
+    <parameter name="heat_sink_type" value="medium" value_type="string"/>  
+    <parameter name="heat_sink_temperature" value_type="range" value_min="20.0" value_max="60.0"/> 
+  </parameters>  
+  <jumpers></jumpers>  
+  <components> 
+    <component name="part0" display_name="XC7K480T FPGA" type="fpga" part_name="xc7k480tffg1156-2" pin_map_file="part0_pins.xml" vendor="xilinx" spec_url="https://www.xilinx.com/products/adaptive-socs-and-fpgas/fpga/kintex-7.html"> 
+      <description>XC7K480T FPGA</description>  
+      <interfaces> 
+        <interface mode="slave" name="default_50mhz_clk0" type="xilinx.com:signal:clock_rtl:1.0" of_component="default_50mhz_clk0" preset_proc="default_50mhz_clk0_preset"> 
+          <parameters> 
+            <parameter name="frequency" value="50000000"/> 
+          </parameters>  
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="clk_wiz" order="0"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="CLK" physical_port="default_50mhz_clk0" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="default_50mhz_clk0"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps> 
+        </interface>  
+        <interface mode="slave" name="default_200mhz_clk1" type="xilinx.com:interface:diff_clock_rtl:1.0" of_component="default_200mhz_clk1" preset_proc="default_200mhz_clk1_preset"> 
+          <parameters> 
+            <parameter name="frequency" value="200000000"/> 
+          </parameters>  
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="clk_wiz" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="util_ds_buf" order="0"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="CLK_P" physical_port="default_200mhz_clk1_p" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="default_200mhz_clk1_p"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="CLK_N" physical_port="default_200mhz_clk1_n" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="default_200mhz_clk1_n"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps> 
+        </interface>  
+        <interface mode="slave" name="default_200mhz_clk2" type="xilinx.com:interface:diff_clock_rtl:1.0" of_component="default_200mhz_clk2" preset_proc="default_200mhz_clk2_preset"> 
+          <parameters> 
+            <parameter name="frequency" value="200000000"/> 
+          </parameters>  
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="clk_wiz" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="util_ds_buf" order="0"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="CLK_P" physical_port="default_200mhz_clk2_p" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="default_200mhz_clk2_p"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="CLK_N" physical_port="default_200mhz_clk2_n" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="default_200mhz_clk2_n"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps> 
+        </interface>  
+        <interface mode="master" name="iic_lm73" type="xilinx.com:interface:iic_rtl:1.0" of_component="iic_lm73"> 
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_iic" order="0"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="SDA_I" physical_port="iic_lm73_sda_i" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SDA_LM73"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="SDA_O" physical_port="iic_lm73_sda_o" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SDA_LM73"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="SDA_T" physical_port="iic_lm73_sda_t" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SDA_LM73"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="SCL_I" physical_port="iic_lm73_scl_i" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SCL_LM73"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="SCL_O" physical_port="iic_lm73_scl_o" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SCL_LM73"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="SCL_T" physical_port="iic_lm73_scl_t" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SCL_LM73"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps> 
+        </interface>  
+        <interface mode="master" name="iic_pcie" type="xilinx.com:interface:iic_rtl:1.0" of_component="iic_pcie"> 
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_iic" order="0"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="SDA_I" physical_port="iic_pcie_sda_i" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SDA_PCIE"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="SDA_O" physical_port="iic_pcie_sda_o" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SDA_PCIE"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="SDA_T" physical_port="iic_pcie_sda_t" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SDA_PCIE"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="SCL_I" physical_port="iic_pcie_scl_i" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SCL_PCIE"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="SCL_O" physical_port="iic_pcie_scl_o" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SCL_PCIE"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="SCL_T" physical_port="iic_pcie_scl_t" dir="inout"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="IIC_SCL_PCIE"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps> 
+        </interface>  
+        <interface mode="slave" name="resetn" type="xilinx.com:signal:reset_rtl:1.0" of_component="resetn"> 
+          <parameters> 
+            <parameter name="rst_polarity" value="0"/> 
+          </parameters>  
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="proc_sys_reset" order="0"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="RESET" physical_port="reset" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="SW_RESET"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps> 
+        </interface>  
+        <interface mode="master" name="led_3bits" type="xilinx.com:interface:gpio_rtl:1.0" of_component="led_3bits" preset_proc="led_3bits_preset"> 
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_gpio" order="0"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="TRI_O" physical_port="leds_3bits_tri_o" dir="out" left="2" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="GPIO_LED_R"/>  
+                <pin_map port_index="1" component_pin="GPIO_LED_G"/>  
+                <pin_map port_index="2" component_pin="GPIO_LED_Y"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps> 
+        </interface>  
+        <interface mode="master" name="pci_express_x1" type="xilinx.com:interface:pcie_7x_mgt_rtl:1.0" of_component="pci_express" preset_proc="pciex1_preset"> 
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="xdma" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="pcie_7x" order="1"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_pcie" order="2"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="txn" physical_port="pcie_tx0_n" dir="out"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_tx0_n"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="rxn" physical_port="pcie_rx0_n" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_rx0_n"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="txp" physical_port="pcie_tx0_p" dir="out"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_tx0_p"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="rxp" physical_port="pcie_rx0_p" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_rx0_p"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps>  
+          <parameters> 
+            <parameter name="block_location" value="X0Y0"/> 
+          </parameters> 
+        </interface>  
+        <interface mode="master" name="pci_express_x2" type="xilinx.com:interface:pcie_7x_mgt_rtl:1.0" of_component="pci_express" preset_proc="pciex2_preset"> 
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="xdma" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="pcie_7x" order="1"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_pcie" order="2"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="txn" physical_port="pcie_tx0_nx2" dir="out" left="1" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_tx0_n"/>  
+                <pin_map port_index="1" component_pin="pcie_tx1_n"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="rxn" physical_port="pcie_rx0_nx2" dir="in" left="1" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_rx0_n"/>  
+                <pin_map port_index="1" component_pin="pcie_rx1_n"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="txp" physical_port="pcie_tx0_px2" dir="out" left="1" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_tx0_p"/>  
+                <pin_map port_index="1" component_pin="pcie_tx1_p"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="rxp" physical_port="pcie_rx0_px2" dir="in" left="1" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_rx0_p"/>  
+                <pin_map port_index="1" component_pin="pcie_rx1_p"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps>  
+          <parameters> 
+            <parameter name="block_location" value="X0Y0"/> 
+          </parameters> 
+        </interface>  
+        <interface mode="master" name="pci_express_x4" type="xilinx.com:interface:pcie_7x_mgt_rtl:1.0" of_component="pci_express" preset_proc="pciex4_preset"> 
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="xdma" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="pcie_7x" order="1"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_pcie" order="2"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="txn" physical_port="pcie_tx0_nx4" dir="out" left="3" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_tx0_n"/>  
+                <pin_map port_index="1" component_pin="pcie_tx1_n"/>  
+                <pin_map port_index="2" component_pin="pcie_tx2_n"/>  
+                <pin_map port_index="3" component_pin="pcie_tx3_n"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="rxn" physical_port="pcie_rx0_nx4" dir="in" left="3" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_rx0_n"/>  
+                <pin_map port_index="1" component_pin="pcie_rx1_n"/>  
+                <pin_map port_index="2" component_pin="pcie_rx2_n"/>  
+                <pin_map port_index="3" component_pin="pcie_rx3_n"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="txp" physical_port="pcie_tx0_px4" dir="out" left="3" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_tx0_p"/>  
+                <pin_map port_index="1" component_pin="pcie_tx1_p"/>  
+                <pin_map port_index="2" component_pin="pcie_tx2_p"/>  
+                <pin_map port_index="3" component_pin="pcie_tx3_p"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="rxp" physical_port="pcie_rx0_px4" dir="in" left="3" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_rx0_p"/>  
+                <pin_map port_index="1" component_pin="pcie_rx1_p"/>  
+                <pin_map port_index="2" component_pin="pcie_rx2_p"/>  
+                <pin_map port_index="3" component_pin="pcie_rx3_p"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps>  
+          <parameters> 
+            <parameter name="block_location" value="X0Y0"/> 
+          </parameters> 
+        </interface>  
+        <interface mode="master" name="pci_express_x8" type="xilinx.com:interface:pcie_7x_mgt_rtl:1.0" of_component="pci_express" preset_proc="pciex8_preset"> 
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="xdma" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="pcie_7x" order="1"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_pcie" order="2"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="txn" physical_port="pcie_tx0_nx8" dir="out" left="7" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_tx0_n"/>  
+                <pin_map port_index="1" component_pin="pcie_tx1_n"/>  
+                <pin_map port_index="2" component_pin="pcie_tx2_n"/>  
+                <pin_map port_index="3" component_pin="pcie_tx3_n"/>  
+                <pin_map port_index="4" component_pin="pcie_tx4_n"/>  
+                <pin_map port_index="5" component_pin="pcie_tx5_n"/>  
+                <pin_map port_index="6" component_pin="pcie_tx6_n"/>  
+                <pin_map port_index="7" component_pin="pcie_tx7_n"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="rxn" physical_port="pcie_rx0_nx8" dir="in" left="7" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_rx0_n"/>  
+                <pin_map port_index="1" component_pin="pcie_rx1_n"/>  
+                <pin_map port_index="2" component_pin="pcie_rx2_n"/>  
+                <pin_map port_index="3" component_pin="pcie_rx3_n"/>  
+                <pin_map port_index="4" component_pin="pcie_rx4_n"/>  
+                <pin_map port_index="5" component_pin="pcie_rx5_n"/>  
+                <pin_map port_index="6" component_pin="pcie_rx6_n"/>  
+                <pin_map port_index="7" component_pin="pcie_rx7_n"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="txp" physical_port="pcie_tx0_px8" dir="out" left="7" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_tx0_p"/>  
+                <pin_map port_index="1" component_pin="pcie_tx1_p"/>  
+                <pin_map port_index="2" component_pin="pcie_tx2_p"/>  
+                <pin_map port_index="3" component_pin="pcie_tx3_p"/>  
+                <pin_map port_index="4" component_pin="pcie_tx4_p"/>  
+                <pin_map port_index="5" component_pin="pcie_tx5_p"/>  
+                <pin_map port_index="6" component_pin="pcie_tx6_p"/>  
+                <pin_map port_index="7" component_pin="pcie_tx7_p"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="rxp" physical_port="pcie_rx0_px8" dir="in" left="7" right="0"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_rx0_p"/>  
+                <pin_map port_index="1" component_pin="pcie_rx1_p"/>  
+                <pin_map port_index="2" component_pin="pcie_rx2_p"/>  
+                <pin_map port_index="3" component_pin="pcie_rx3_p"/>  
+                <pin_map port_index="4" component_pin="pcie_rx4_p"/>  
+                <pin_map port_index="5" component_pin="pcie_rx5_p"/>  
+                <pin_map port_index="6" component_pin="pcie_rx6_p"/>  
+                <pin_map port_index="7" component_pin="pcie_rx7_p"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps>  
+          <parameters> 
+            <parameter name="block_location" value="X0Y0"/> 
+          </parameters> 
+        </interface>  
+        <interface mode="slave" name="pcie_perstn" type="xilinx.com:signal:reset_rtl:1.0" of_component="pci_express"> 
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="xdma" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="pcie_7x" order="1"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_pcie" order="2"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="RST" physical_port="pcie_perstn_rst" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_perstn_rst"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps>  
+          <parameters> 
+            <parameter name="rst_polarity" value="0"/>  
+            <parameter name="type" value="PCIE_PERST"/> 
+          </parameters> 
+        </interface>  
+        <interface mode="slave" name="pcie_refclk" type="xilinx.com:interface:diff_clock_rtl:1.0" of_component="pcie_refclk" preset_proc="pcie_refclk_preset"> 
+          <parameters> 
+            <parameter name="frequency" value="100000000"/> 
+          </parameters>  
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="util_ds_buf" order="0"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="CLK_P" physical_port="pcie_mgt_clkp" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_mgt_clkp"/> 
+              </pin_maps> 
+            </port_map>  
+            <port_map logical_port="CLK_N" physical_port="pcie_mgt_clkn" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="pcie_mgt_clkn"/> 
+              </pin_maps> 
+            </port_map> 
+          </port_maps> 
+        </interface> 
+        <interface mode="master" name="ddr3_sdram_ch0" type="xilinx.com:interface:ddrx_rtl:1.0" of_component="ddr3_sdram" preset_proc="ddr3_sdram_ch0_preset"> 
+          <description>DDR3 board interface, it can use MIG IP for connection.</description>
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="mig_7series" order="0"/>
+          </preferred_ips>
+        </interface>
+        <interface mode="master" name="ddr3_sdram_ch1" type="xilinx.com:interface:ddrx_rtl:1.0" of_component="ddr3_sdram" preset_proc="ddr3_sdram_ch1_preset"> 
+          <description>DDR3 board interface, it can use MIG IP for connection.</description>
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="mig_7series" order="0"/>
+          </preferred_ips>
+        </interface>
+        <interface mode="master" name="ddr3_sdram_ch01" type="xilinx.com:interface:ddrx_rtl:1.0" of_component="ddr3_sdram" preset_proc="ddr3_sdram_ch01_preset"> 
+          <description>DDR3 board interface, it can use MIG IP for connection.</description>
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="mig_7series" order="0"/>
+          </preferred_ips>
+        </interface>
+        <interface mode="master" name="bpi_flash" type="xilinx.com:interface:emc_rtl:1.0" of_component="bpi_flash" preset_proc="emc_preset"> 
+          <preferred_ips>
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_emc" order="0"/>
+          </preferred_ips>
+          <port_maps>
+            <port_map logical_port="ADDR" physical_port="linear_flash_addr" dir="out" left="25" right="1"> 
+              <pin_maps>
+                <pin_map port_index="0" component_pin="linear_flash_addr_1"/> 
+                <pin_map port_index="1" component_pin="linear_flash_addr_2"/> 
+                <pin_map port_index="2" component_pin="linear_flash_addr_3"/> 
+                <pin_map port_index="3" component_pin="linear_flash_addr_4"/> 
+                <pin_map port_index="4" component_pin="linear_flash_addr_5"/> 
+                <pin_map port_index="5" component_pin="linear_flash_addr_6"/> 
+                <pin_map port_index="6" component_pin="linear_flash_addr_7"/> 
+                <pin_map port_index="7" component_pin="linear_flash_addr_8"/> 
+                <pin_map port_index="8" component_pin="linear_flash_addr_9"/> 
+                <pin_map port_index="9" component_pin="linear_flash_addr_10"/> 
+                <pin_map port_index="10" component_pin="linear_flash_addr_11"/> 
+                <pin_map port_index="11" component_pin="linear_flash_addr_12"/> 
+                <pin_map port_index="12" component_pin="linear_flash_addr_13"/> 
+                <pin_map port_index="13" component_pin="linear_flash_addr_14"/> 
+                <pin_map port_index="14" component_pin="linear_flash_addr_15"/> 
+                <pin_map port_index="15" component_pin="linear_flash_addr_16"/> 
+                <pin_map port_index="16" component_pin="linear_flash_addr_17"/> 
+                <pin_map port_index="17" component_pin="linear_flash_addr_18"/> 
+                <pin_map port_index="18" component_pin="linear_flash_addr_19"/> 
+                <pin_map port_index="19" component_pin="linear_flash_addr_20"/> 
+                <pin_map port_index="20" component_pin="linear_flash_addr_21"/> 
+                <pin_map port_index="21" component_pin="linear_flash_addr_22"/> 
+                <pin_map port_index="22" component_pin="linear_flash_addr_23"/> 
+                <pin_map port_index="23" component_pin="linear_flash_addr_24"/> 
+                <pin_map port_index="24" component_pin="linear_flash_addr_25"/> 
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="DQ_I" physical_port="linear_flash_dq_i" dir="in" left="15" right="0"> 
+              <pin_maps>
+                <pin_map port_index="0" component_pin="linear_flash_dq_i_0"/> 
+                <pin_map port_index="1" component_pin="linear_flash_dq_i_1"/> 
+                <pin_map port_index="2" component_pin="linear_flash_dq_i_2"/> 
+                <pin_map port_index="3" component_pin="linear_flash_dq_i_3"/> 
+                <pin_map port_index="4" component_pin="linear_flash_dq_i_4"/> 
+                <pin_map port_index="5" component_pin="linear_flash_dq_i_5"/> 
+                <pin_map port_index="6" component_pin="linear_flash_dq_i_6"/> 
+                <pin_map port_index="7" component_pin="linear_flash_dq_i_7"/> 
+                <pin_map port_index="8" component_pin="linear_flash_dq_i_8"/> 
+                <pin_map port_index="9" component_pin="linear_flash_dq_i_9"/> 
+                <pin_map port_index="10" component_pin="linear_flash_dq_i_10"/> 
+                <pin_map port_index="11" component_pin="linear_flash_dq_i_11"/> 
+                <pin_map port_index="12" component_pin="linear_flash_dq_i_12"/> 
+                <pin_map port_index="13" component_pin="linear_flash_dq_i_13"/> 
+                <pin_map port_index="14" component_pin="linear_flash_dq_i_14"/> 
+                <pin_map port_index="15" component_pin="linear_flash_dq_i_15"/> 
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="DQ_O" physical_port="linear_flash_dq_o" dir="out" left="15" right="0"> 
+              <pin_maps>
+                <pin_map port_index="0" component_pin="linear_flash_dq_i_0"/> 
+                <pin_map port_index="1" component_pin="linear_flash_dq_i_1"/> 
+                <pin_map port_index="2" component_pin="linear_flash_dq_i_2"/> 
+                <pin_map port_index="3" component_pin="linear_flash_dq_i_3"/> 
+                <pin_map port_index="4" component_pin="linear_flash_dq_i_4"/> 
+                <pin_map port_index="5" component_pin="linear_flash_dq_i_5"/> 
+                <pin_map port_index="6" component_pin="linear_flash_dq_i_6"/> 
+                <pin_map port_index="7" component_pin="linear_flash_dq_i_7"/> 
+                <pin_map port_index="8" component_pin="linear_flash_dq_i_8"/> 
+                <pin_map port_index="9" component_pin="linear_flash_dq_i_9"/> 
+                <pin_map port_index="10" component_pin="linear_flash_dq_i_10"/> 
+                <pin_map port_index="11" component_pin="linear_flash_dq_i_11"/> 
+                <pin_map port_index="12" component_pin="linear_flash_dq_i_12"/> 
+                <pin_map port_index="13" component_pin="linear_flash_dq_i_13"/> 
+                <pin_map port_index="14" component_pin="linear_flash_dq_i_14"/> 
+                <pin_map port_index="15" component_pin="linear_flash_dq_i_15"/> 
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="DQ_T" physical_port="linear_flash_dq_t" dir="out" left="15" right="0"> 
+              <pin_maps>
+                <pin_map port_index="0" component_pin="linear_flash_dq_i_0"/> 
+                <pin_map port_index="1" component_pin="linear_flash_dq_i_1"/> 
+                <pin_map port_index="2" component_pin="linear_flash_dq_i_2"/> 
+                <pin_map port_index="3" component_pin="linear_flash_dq_i_3"/> 
+                <pin_map port_index="4" component_pin="linear_flash_dq_i_4"/> 
+                <pin_map port_index="5" component_pin="linear_flash_dq_i_5"/> 
+                <pin_map port_index="6" component_pin="linear_flash_dq_i_6"/> 
+                <pin_map port_index="7" component_pin="linear_flash_dq_i_7"/> 
+                <pin_map port_index="8" component_pin="linear_flash_dq_i_8"/> 
+                <pin_map port_index="9" component_pin="linear_flash_dq_i_9"/> 
+                <pin_map port_index="10" component_pin="linear_flash_dq_i_10"/> 
+                <pin_map port_index="11" component_pin="linear_flash_dq_i_11"/> 
+                <pin_map port_index="12" component_pin="linear_flash_dq_i_12"/> 
+                <pin_map port_index="13" component_pin="linear_flash_dq_i_13"/> 
+                <pin_map port_index="14" component_pin="linear_flash_dq_i_14"/> 
+                <pin_map port_index="15" component_pin="linear_flash_dq_i_15"/> 
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="ADV_LDN" physical_port="linear_flash_adv_ldn" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="linear_flash_adv_ldn"/> 
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="OEN" physical_port="linear_flash_oen" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="linear_flash_oen"/> 
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="WEN" physical_port="linear_flash_wen" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="linear_flash_wen"/> 
+              </pin_maps>
+            </port_map>
+            <port_map logical_port="CE_N" physical_port="linear_flash_ce_n" dir="inout">
+              <pin_maps>
+                <pin_map port_index="0" component_pin="linear_flash_ce_n"/> 
+              </pin_maps>
+            </port_map>
+          </port_maps>
+        </interface>
+      </interfaces> 
+    </component>  
+    <component name="iic_lm73" display_name="IIC" type="chip" sub_type="chip" major_group="Miscellaneous"> 
+      <description>LM73 Temperature Sensor</description> 
+    </component>  
+    <component name="iic_pcie" display_name="IIC" type="chip" sub_type="chip" major_group="Miscellaneous"> 
+      <description>PCIE SMBus</description> 
+    </component>  
+    <component name="resetn" display_name="FPGA Resetn" type="chip" sub_type="system_reset" major_group="Reset" part_name="Push-Button" vendor="Unknown"> 
+      <description>FPGA Reset Push Button, Active Low</description> 
+    </component>  
+    <component name="led_3bits" display_name="User LEDs" type="chip" sub_type="led" major_group="General Purpose Input or Output" part_name="LED" vendor="Unknown"> 
+      <description>LEDs Red Green Yellow, Active High</description> 
+    </component>  
+    <component name="pci_express" display_name="PCI Express" type="chip" sub_type="chip" major_group="Miscellaneous"> 
+      <description>PCI Express</description>  
+      <component_modes> 
+        <component_mode name="pci_express_x1" display_name="pci_express x1 "> 
+          <interfaces> 
+            <interface name="pci_express_x1"/>  
+            <interface name="pcie_perstn" optional="true"/>  
+            <interface name="pcie_refclk" optional="true"/> 
+          </interfaces>  
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="xdma" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="pcie_7x" order="1"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_pcie" order="2"/> 
+          </preferred_ips> 
+        </component_mode>  
+        <component_mode name="pci_express_x2" display_name="pci_express x2 "> 
+          <interfaces> 
+            <interface name="pci_express_x2"/>  
+            <interface name="pcie_perstn" optional="true"/>  
+            <interface name="pcie_refclk" optional="true"/> 
+          </interfaces>  
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="xdma" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="pcie_7x" order="1"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_pcie" order="2"/> 
+          </preferred_ips> 
+        </component_mode>  
+        <component_mode name="pci_express_x4" display_name="pci_express x4 "> 
+          <interfaces> 
+            <interface name="pci_express_x4"/>  
+            <interface name="pcie_perstn" optional="true"/>  
+            <interface name="pcie_refclk" optional="true"/> 
+          </interfaces>  
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="xdma" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="pcie_7x" order="1"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_pcie" order="2"/> 
+          </preferred_ips> 
+        </component_mode>  
+        <component_mode name="pci_express_x8" display_name="pci_express x8 "> 
+          <interfaces> 
+            <interface name="pci_express_x8"/>  
+            <interface name="pcie_perstn" optional="true"/>  
+            <interface name="pcie_refclk" optional="true"/> 
+          </interfaces>  
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="xdma" order="0"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="pcie_7x" order="1"/>  
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_pcie" order="2"/> 
+          </preferred_ips> 
+        </component_mode> 
+      </component_modes> 
+    </component>  
+    <component name="pcie_refclk" display_name="PCIe MGT reference Clock" type="chip" sub_type="mgt_clock" major_group="Clock Sources" part_name="pcie_8lane_edge" vendor="Clock" spec_url=""> 
+      <description>Clock input from PCI Express edge connector</description>  
+      <parameters> 
+        <parameter name="frequency" value="100000000"/> 
+      </parameters> 
+    </component>  
+    <component name="default_50mhz_clk0" display_name="50 MHz System clock0" type="chip" sub_type="system_clock" major_group="Clock Sources" part_name="OSC" vendor="Unknown" spec_url=""> 
+      <description>Single-Ended 50 MHz oscillator used as system clock on the board</description>  
+      <parameters> 
+        <parameter name="frequency" value="50000000"/> 
+      </parameters> 
+    </component>  
+    <component name="default_200mhz_clk1" display_name="200 MHz System differential clock1" type="chip" sub_type="system_clock" major_group="Clock Sources" part_name="OSC" vendor="Unknown" spec_url=""> 
+      <description>Differential 200 MHz oscillator used as system differential clock on the board</description>  
+      <parameters> 
+        <parameter name="frequency" value="200000000"/> 
+      </parameters> 
+    </component>  
+    <component name="default_200mhz_clk2" display_name="200 MHz System differential clock2" type="chip" sub_type="system_clock" major_group="Clock Sources" part_name="OSC" vendor="Unknown" spec_url=""> 
+      <description>Differential 200 MHz oscillator used as system differential clock on the board</description>  
+      <parameters> 
+        <parameter name="frequency" value="200000000"/> 
+      </parameters> 
+    </component> 
+    <component name="ddr3_sdram" display_name="DDR3 SDRAM" type="chip" sub_type="ddr" major_group="External Memory">
+      <description>4GB DDR3 memory Components</description>
+      <component_modes>
+        <component_mode name="ddr3_sdram_ch0" display_name="DDR3 SDRAM CH0">
+          <interfaces> 
+            <interface name="ddr3_sdram_ch0"/>  
+          </interfaces> 
+          <parameters>
+            <parameter name="ddr_type" value="ddr3"/>
+            <parameter name="size" value="2GB"/>
+          </parameters>
+        </component_mode>
+        <component_mode name="ddr3_sdram_ch1" display_name="DDR3 SDRAM CH1">
+          <interfaces> 
+            <interface name="ddr3_sdram_ch1"/>  
+          </interfaces> 
+          <parameters>
+            <parameter name="ddr_type" value="ddr3"/>
+            <parameter name="size" value="2GB"/>
+          </parameters>
+        </component_mode>
+        <component_mode name="ddr3_sdram_ch01" display_name="DDR3 SDRAM Dual">
+          <interfaces> 
+            <interface name="ddr3_sdram_ch01"/>  
+          </interfaces> 
+          <parameters>
+            <parameter name="ddr_type" value="ddr3"/>
+            <parameter name="size" value="4GB"/>
+          </parameters>
+        </component_mode>
+      </component_modes>
+    </component>
+    <component name="bpi_flash" display_name="Linear flash" type="chip" sub_type="memory_flash_bpi" major_group="External Memory" part_name="MT28GU512AAA1EGC" vendor="Micron">
+      <description>512 Mbit BPI parallel NOR flash memory</description>
+    </component>
+  </components>  
+  <jtag_chains> 
+    <jtag_chain name="chain1"> 
+      <position name="0" component="part0"/> 
+    </jtag_chain> 
+  </jtag_chains>  
+  <connections> 
+    <connection name="part0_sysclk0_50MHZ" component1="part0" component2="default_50mhz_clk0"> 
+      <connection_map name="part0_sysclk0_50MHZ_1" typical_delay="5" c1_st_index="0" c1_end_index="0" c2_st_index="0" c2_end_index="0"/> 
+    </connection>  
+    <connection name="part0_sysclk1_200MHZ" component1="part0" component2="default_200mhz_clk1"> 
+      <connection_map name="part0_sysclk1_200MHZ_1" typical_delay="5" c1_st_index="1" c1_end_index="2" c2_st_index="0" c2_end_index="1"/> 
+    </connection>  
+    <connection name="part0_sysclk2_200MHZ" component1="part0" component2="default_200mhz_clk2"> 
+      <connection_map name="part0_sysclk2_200MHZ_1" typical_delay="5" c1_st_index="3" c1_end_index="4" c2_st_index="0" c2_end_index="1"/> 
+    </connection>  
+    <connection name="part0_iic_lm73" component1="part0" component2="iic_lm73"> 
+      <connection_map name="part0_iic_lm73_1" typical_delay="5" c1_st_index="5" c1_end_index="6" c2_st_index="0" c2_end_index="1"/> 
+    </connection>  
+    <connection name="part0_iic_pcie" component1="part0" component2="iic_pcie"> 
+      <connection_map name="part0_iic_lm73_1" typical_delay="5" c1_st_index="7" c1_end_index="8" c2_st_index="0" c2_end_index="1"/> 
+    </connection>  
+    <connection name="part0_reset" component1="part0" component2="resetn"> 
+      <connection_map name="part0_reset_1" typical_delay="5" c1_st_index="9" c1_end_index="9" c2_st_index="0" c2_end_index="0"/> 
+    </connection>  
+    <connection name="part0_led_3bits" component1="part0" component2="led_3bits"> 
+      <connection_map name="part0_led_3bits_1" typical_delay="5" c1_st_index="10" c1_end_index="12" c2_st_index="0" c2_end_index="2"/> 
+    </connection>  
+    <connection name="part0_pcie_refclk" component1="part0" component2="pcie_refclk"> 
+      <connection_map name="part0_pcie_refclk1" typical_delay="5" c1_st_index="13" c1_end_index="14" c2_st_index="0" c2_end_index="1"/> 
+    </connection>  
+    <connection name="part0_pci_express" component1="part0" component2="pci_express"> 
+      <connection_map name="part0_pcie_express_1" c1_st_index="15" c1_end_index="46" c2_st_index="0" c2_end_index="31"/> 
+    </connection>  
+    <connection name="part0_pcie_perstn" component1="part0" component2="pcie_perstn"> 
+      <connection_map name="part0_pcie_perstn_1" c1_st_index="47" c1_end_index="47" c2_st_index="0" c2_end_index="0"/> 
+    </connection> 
+    <connection name="part0_bpi_flash" component1="part0" component2="bpi_flash">
+      <connection_map name="part0_bpi_flash_1" c1_st_index="48" c1_end_index="92" c2_st_index="0" c2_end_index="44"/>
+    </connection>
+  </connections>  
+  <ip_associated_rules> 
+    <ip_associated_rule name="default"> 
+      <ip vendor="xilinx.com" library="ip" name="mig_7series" version="*" ip_interface="C0_SYS_CLK"> 
+        <associated_board_interfaces> 
+          <associated_board_interface name="default_200mhz_clk1" order="0"/> 
+          <associated_board_interface name="default_200mhz_clk2" order="1"/> 
+        </associated_board_interfaces> 
+      </ip> 
+      <ip vendor="xilinx.com" library="ip" name="mig_7series" version="*" ip_interface="C1_SYS_CLK"> 
+        <associated_board_interfaces> 
+          <associated_board_interface name="default_200mhz_clk2" order="0"/> 
+          <associated_board_interface name="default_200mhz_clk1" order="1"/> 
+        </associated_board_interfaces> 
+      </ip> 
+      <ip vendor="xilinx.com" library="ip" name="mig_7series" version="*" ip_interface="C0_DDR3"> 
+        <associated_board_interfaces> 
+          <associated_board_interface name="ddr3_sdram_ch01" order="0"/> 
+          <associated_board_interface name="ddr3_sdram_ch0" order="1"/> 
+          <associated_board_interface name="ddr3_sdram_ch1" order="2"/> 
+        </associated_board_interfaces> 
+      </ip> 
+      <ip vendor="xilinx.com" library="ip" name="mig_7series" version="*" ip_interface="C1_DDR3"> 
+        <associated_board_interfaces> 
+          <associated_board_interface name="ddr3_sdram_ch01" order="0"/> 
+          <associated_board_interface name="ddr3_sdram_ch1" order="1"/> 
+          <associated_board_interface name="ddr3_sdram_ch0" order="2"/> 
+        </associated_board_interfaces> 
+      </ip> 
+      <ip vendor="xilinx.com" library="ip" name="xdma" version="*" ip_interface="pcie_mgt"> 
+        <associated_board_interfaces> 
+          <associated_board_interface name="pci_express_x8" order="0"/> 
+          <associated_board_interface name="pci_express_x4" order="1"/>
+          <associated_board_interface name="pci_express_x2" order="2"/>
+          <associated_board_interface name="pci_express_x1" order="3"/>   
+        </associated_board_interfaces> 
+      </ip>  
+      <ip vendor="xilinx.com" library="ip" name="xdma" version="*" ip_interface="sys_rst_n"> 
+        <associated_board_interfaces> 
+          <associated_board_interface name="pcie_perstn" order="0"/> 
+        </associated_board_interfaces> 
+      </ip>  
+      <ip vendor="xilinx.com" library="ip" name="pcie_7x" version="*" ip_interface="sys_rst_n"> 
+        <associated_board_interfaces> 
+          <associated_board_interface name="pcie_perstn" order="0"/> 
+        </associated_board_interfaces> 
+      </ip>  
+      <ip vendor="xilinx.com" library="ip" name="util_ds_buf" version="*" ip_interface="CLK_IN_D"> 
+        <associated_board_interfaces> 
+          <associated_board_interface name="pcie_refclk" order="0"/> 
+        </associated_board_interfaces> 
+      </ip> 
+    </ip_associated_rule> 
+  </ip_associated_rules> 
+</board>
