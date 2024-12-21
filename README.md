@@ -4,10 +4,10 @@ YPCB-00338-1P1 板卡逆向资料
 
 ## 包含内容
 
--constraints: 约束文件，描述引脚作用。
--documents: 参考文档。
--examples: 样例工程。
--ypcb003381p1: 板卡文件。
+ - constraints: 约束文件，描述引脚作用。
+ - documents: 参考文档。
+ - examples: 样例工程。
+ - ypcb003381p1: 板卡文件。
 
 ## 使用方法
 
