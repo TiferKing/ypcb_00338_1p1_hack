@@ -11,7 +11,7 @@ YPCB-00338-1P1 板卡逆向资料
 
 ## 使用方法
 
-将文件夹ypcb003381p1复制进 Vivado/<version>/data/boards/board_files/ ，如果没有board_files目录就自行创建一个。
+将文件夹ypcb003381p1复制进 Vivado/\<version\>/data/boards/board_files/ ，如果没有board_files目录就自行创建一个。
 
 打开Vivado新建工程即可选择“YPCB-00338-1P1 Accelerator Card”。
 
