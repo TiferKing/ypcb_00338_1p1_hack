@@ -13,7 +13,7 @@
   <description>YPCB-00338-1P1 Accelerator Card</description>  
   <parameters> 
     <parameter name="heat_sink_type" value="medium" value_type="string"/>  
-    <parameter name="heat_sink_temperature" value_type="range" value_min="20.0" value_max="60.0"/> 
+    <parameter name="heat_sink_temperature" value_type="range" value_min="20.0" value_max="30.0"/> 
   </parameters>  
   <jumpers></jumpers>  
   <components> 
@@ -114,6 +114,18 @@
             </port_map> 
           </port_maps> 
         </interface>  
+        <interface mode="master" name="alert_lm73" type="xilinx.com:interface:gpio_rtl:1.0" of_component="alert_lm73" preset_proc="alert_lm73_preset"> 
+          <preferred_ips> 
+            <preferred_ip vendor="xilinx.com" library="ip" name="axi_gpio" order="0"/> 
+          </preferred_ips>  
+          <port_maps> 
+            <port_map logical_port="TRI_I" physical_port="alert_lm73_tri_i" dir="in"> 
+              <pin_maps> 
+                <pin_map port_index="0" component_pin="LM73_ALERT"/>  
+              </pin_maps> 
+            </port_map> 
+          </port_maps> 
+        </interface> 
         <interface mode="master" name="iic_pcie" type="xilinx.com:interface:iic_rtl:1.0" of_component="iic_pcie"> 
           <preferred_ips> 
             <preferred_ip vendor="xilinx.com" library="ip" name="axi_iic" order="0"/> 
@@ -208,9 +220,9 @@
               </pin_maps> 
             </port_map> 
           </port_maps>  
-          <parameters> 
-            <parameter name="block_location" value="X0Y0"/> 
-          </parameters> 
+          <parameters>
+            <parameter name="block_location" value="X0Y0" />
+          </parameters>
         </interface>  
         <interface mode="master" name="pci_express_x2" type="xilinx.com:interface:pcie_7x_mgt_rtl:1.0" of_component="pci_express" preset_proc="pciex2_preset"> 
           <preferred_ips> 
@@ -244,9 +256,9 @@
               </pin_maps> 
             </port_map> 
           </port_maps>  
-          <parameters> 
-            <parameter name="block_location" value="X0Y0"/> 
-          </parameters> 
+          <parameters>
+            <parameter name="block_location" value="X0Y0" />
+          </parameters>
         </interface>  
         <interface mode="master" name="pci_express_x4" type="xilinx.com:interface:pcie_7x_mgt_rtl:1.0" of_component="pci_express" preset_proc="pciex4_preset"> 
           <preferred_ips> 
@@ -288,9 +300,9 @@
               </pin_maps> 
             </port_map> 
           </port_maps>  
-          <parameters> 
-            <parameter name="block_location" value="X0Y0"/> 
-          </parameters> 
+          <parameters>
+            <parameter name="block_location" value="X0Y0" />
+          </parameters>
         </interface>  
         <interface mode="master" name="pci_express_x8" type="xilinx.com:interface:pcie_7x_mgt_rtl:1.0" of_component="pci_express" preset_proc="pciex8_preset"> 
           <preferred_ips> 
@@ -348,9 +360,9 @@
               </pin_maps> 
             </port_map> 
           </port_maps>  
-          <parameters> 
-            <parameter name="block_location" value="X0Y0"/> 
-          </parameters> 
+          <parameters>
+            <parameter name="block_location" value="X0Y0" />
+          </parameters>
         </interface>  
         <interface mode="slave" name="pcie_perstn" type="xilinx.com:signal:reset_rtl:1.0" of_component="pci_express"> 
           <preferred_ips> 
@@ -415,7 +427,7 @@
           <port_maps>
             <port_map logical_port="ADDR" physical_port="linear_flash_addr" dir="out" left="25" right="1"> 
               <pin_maps>
-                <pin_map port_index="0" component_pin="linear_flash_addr_1"/> 
+                <pin_map port_index="0" component_pin="linear_flash_addr_1"/>
                 <pin_map port_index="1" component_pin="linear_flash_addr_2"/> 
                 <pin_map port_index="2" component_pin="linear_flash_addr_3"/> 
                 <pin_map port_index="3" component_pin="linear_flash_addr_4"/> 
@@ -526,9 +538,12 @@
         </interface>
       </interfaces> 
     </component>  
-    <component name="iic_lm73" display_name="IIC" type="chip" sub_type="chip" major_group="Miscellaneous"> 
+    <component name="iic_lm73" display_name="IIC" type="chip" sub_type="chip" major_group="Miscellaneous" part_name="LM73CIMKX" vendor="Texas Instruments"> 
       <description>LM73 Temperature Sensor</description> 
     </component>  
+    <component name="alert_lm73" display_name="Sensor Alert" type="chip" sub_type="chip" major_group="Miscellaneous"> 
+      <description>LM73 Temperature Sensor Alert Interrupt</description> 
+    </component>
     <component name="iic_pcie" display_name="IIC" type="chip" sub_type="chip" major_group="Miscellaneous"> 
       <description>PCIE SMBus</description> 
     </component>  
@@ -669,26 +684,29 @@
     <connection name="part0_iic_lm73" component1="part0" component2="iic_lm73"> 
       <connection_map name="part0_iic_lm73_1" typical_delay="5" c1_st_index="5" c1_end_index="6" c2_st_index="0" c2_end_index="1"/> 
     </connection>  
+    <connection name="part0_alert_lm73" component1="part0" component2="alert_lm73"> 
+      <connection_map name="part0_alert_lm73_1" typical_delay="5" c1_st_index="7" c1_end_index="7" c2_st_index="0" c2_end_index="0"/> 
+    </connection>  
     <connection name="part0_iic_pcie" component1="part0" component2="iic_pcie"> 
-      <connection_map name="part0_iic_lm73_1" typical_delay="5" c1_st_index="7" c1_end_index="8" c2_st_index="0" c2_end_index="1"/> 
+      <connection_map name="part0_iic_pcie_1" typical_delay="5" c1_st_index="8" c1_end_index="9" c2_st_index="0" c2_end_index="1"/> 
     </connection>  
     <connection name="part0_reset" component1="part0" component2="resetn"> 
-      <connection_map name="part0_reset_1" typical_delay="5" c1_st_index="9" c1_end_index="9" c2_st_index="0" c2_end_index="0"/> 
+      <connection_map name="part0_reset_1" typical_delay="5" c1_st_index="10" c1_end_index="10" c2_st_index="0" c2_end_index="0"/> 
     </connection>  
     <connection name="part0_led_3bits" component1="part0" component2="led_3bits"> 
-      <connection_map name="part0_led_3bits_1" typical_delay="5" c1_st_index="10" c1_end_index="12" c2_st_index="0" c2_end_index="2"/> 
+      <connection_map name="part0_led_3bits_1" typical_delay="5" c1_st_index="11" c1_end_index="13" c2_st_index="0" c2_end_index="2"/> 
     </connection>  
     <connection name="part0_pcie_refclk" component1="part0" component2="pcie_refclk"> 
-      <connection_map name="part0_pcie_refclk1" typical_delay="5" c1_st_index="13" c1_end_index="14" c2_st_index="0" c2_end_index="1"/> 
+      <connection_map name="part0_pcie_refclk1" typical_delay="5" c1_st_index="14" c1_end_index="15" c2_st_index="0" c2_end_index="1"/> 
     </connection>  
     <connection name="part0_pci_express" component1="part0" component2="pci_express"> 
-      <connection_map name="part0_pcie_express_1" c1_st_index="15" c1_end_index="46" c2_st_index="0" c2_end_index="31"/> 
+      <connection_map name="part0_pcie_express_1" c1_st_index="16" c1_end_index="47" c2_st_index="0" c2_end_index="31"/> 
     </connection>  
     <connection name="part0_pcie_perstn" component1="part0" component2="pcie_perstn"> 
-      <connection_map name="part0_pcie_perstn_1" c1_st_index="47" c1_end_index="47" c2_st_index="0" c2_end_index="0"/> 
+      <connection_map name="part0_pcie_perstn_1" c1_st_index="48" c1_end_index="48" c2_st_index="0" c2_end_index="0"/> 
     </connection> 
     <connection name="part0_bpi_flash" component1="part0" component2="bpi_flash">
-      <connection_map name="part0_bpi_flash_1" c1_st_index="48" c1_end_index="92" c2_st_index="0" c2_end_index="44"/>
+      <connection_map name="part0_bpi_flash_1" c1_st_index="49" c1_end_index="93" c2_st_index="0" c2_end_index="44"/>
     </connection>
   </connections>  
   <ip_associated_rules> 
