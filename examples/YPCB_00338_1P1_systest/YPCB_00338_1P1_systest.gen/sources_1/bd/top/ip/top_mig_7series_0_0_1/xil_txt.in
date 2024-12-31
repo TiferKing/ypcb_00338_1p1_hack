@@ -1,0 +1,24 @@
+SET_FLAG MODE BATCH
+SET_FLAG STANDALONE_MODE TRUE
+SET_PREFERENCE ipi_mode yes
+SET_PREFERENCE is_ip_locked false
+SET_PREFERENCE devicefamily kintex7
+SET_PREFERENCE device xc7k480t
+SET_PREFERENCE speedgrade -2
+SET_PREFERENCE package ffg1156
+SET_PREFERENCE verilogsim true
+SET_PREFERENCE vhdlsim false
+SET_PREFERENCE designentry Verilog
+SET_PREFERENCE outputdirectory /home/tiferking/WorkPlace/FPGA/YPCB_00338_1P1_systest/YPCB_00338_1P1_systest.gen/sources_1/bd/top/ip/top_mig_7series_0_0_1/_tmp/
+SET_PREFERENCE subworkingdirectory /home/tiferking/WorkPlace/FPGA/YPCB_00338_1P1_systest/YPCB_00338_1P1_systest.gen/sources_1/bd/top/ip/top_mig_7series_0_0_1/_tmp/
+SET_PREFERENCE flowvendor Other
+SET_PREFERENCE tool vivado
+SET_PREFERENCE compnamestatus 0
+SET_PARAMETER component_name top_mig_7series_0_0
+SET_PARAMETER xml_input_file /home/tiferking/WorkPlace/FPGA/YPCB_00338_1P1_systest/YPCB_00338_1P1_systest.srcs/sources_1/bd/top/ip/top_mig_7series_0_0_1/board.prj
+SET_PARAMETER data_dir_path /tools/Xilinx/Vivado/2022.2/data/ip/xilinx/mig_7series_v4_2
+SET_CORE_NAME Memory Interface Generator (MIG 7 Series)
+SET_CORE_VERSION 4.2
+SET_CORE_VLNV xilinx.com:ip:mig_7series:4.2
+SET_CORE_PATH /tools/Xilinx/Vivado/2022.2/data/ip/xilinx/mig_7series_v4_2
+SET_CORE_DATASHEET /tools/Xilinx/Vivado/2022.2/data/ip/xilinx/mig_7series_v4_2/data/docs/ds176_7series_MIS.pdf

@@ -1,0 +1,157 @@
+
+
+Vivado Project Options:
+   Target Device                   : xc7k480t-ffg1156
+   Speed Grade                     : -2
+   HDL                             : verilog
+   Synthesis Tool                  : VIVADO
+
+MIG Output Options:
+   Module Name                     : top_mig_7series_0_0
+   No of Controllers               : 2
+   Selected Compatible Device(s)   : --
+
+FPGA Options:
+   System Clock Type               : Differential
+   Reference Clock Type            : Use System Clock
+   Debug Port                      : Disable
+   Internal Vref                   : disabled
+   IO Power Reduction              : ON
+   XADC instantiation in MIG       : Enabled
+
+Extended FPGA Options:
+   DCI for DQ,DQS/DQS#,DM          : enabled
+   Internal Termination (HR Banks) : 50 Ohms
+    
+/*******************************************************/
+/*                  Controller 0                       */
+/*******************************************************/
+Controller Options :
+   Memory                        : DDR3_SDRAM
+   Interface                     : AXI
+   Design Clock Frequency        : 1875 ps (  0.00 MHz)
+   Phy to Controller Clock Ratio : 4:1
+   Input Clock Period            : 5000 ps
+   CLKFBOUT_MULT (PLL)           : 16
+   DIVCLK_DIVIDE (PLL)           : 3
+   VCC_AUX IO                    : 1.8V
+   Memory Type                   : Components
+   Memory Part                   : MT41K256M8XX-125
+   Equivalent Part(s)            : MT41K256M8DA-125
+   Data Width                    : 72
+   ECC                           : Enabled
+   Data Mask                     : disabled
+   ORDERING                      : Normal
+
+AXI Parameters :
+   Data Width                    : 512
+   Arbitration Scheme            : RD_PRI_REG
+   Narrow Burst Support          : 0
+   ID Width                      : 4
+
+Memory Options:
+   Burst Length (MR0[1:0])          : 8 - Fixed
+   Read Burst Type (MR0[3])         : Sequential
+   CAS Latency (MR0[6:4])           : 7
+   Output Drive Strength (MR1[5,1]) : RZQ/7
+   Controller CS option             : Enable
+   Rtt_NOM - ODT (MR1[9,6,2])       : RZQ/4
+   Rtt_WR - Dynamic ODT (MR2[10:9]) : Dynamic ODT off
+   Memory Address Mapping           : BANK_ROW_COLUMN
+
+
+Bank Selections:
+	Bank: 11
+		Byte Group T0:	DQ[16-23]
+		Byte Group T1:	DQ[8-15]
+		Byte Group T2:	DQ[0-7]
+		Byte Group T3:	DQ[24-31]
+	Bank: 12
+		Byte Group T0:	Address/Ctrl-1
+		Byte Group T1:	Address/Ctrl-0
+		Byte Group T2:	Address/Ctrl-2
+		Byte Group T3:	DQ[56-63]
+	Bank: 13
+		Byte Group T0:	DQ[48-55]
+		Byte Group T1:	DQ[40-47]
+		Byte Group T2:	DQ[32-39]
+		Byte Group T3:	DQ[64-71]
+
+System_Clock: 
+	SignalName: c0_sys_clk_p/n
+		PadLocation: AH27/AH28(CC_P/N)  Bank: 12
+
+System_Control: 
+	SignalName: sys_rst
+		PadLocation: No connect  Bank: Select Bank
+	SignalName: init_calib_complete
+		PadLocation: No connect  Bank: Select Bank
+	SignalName: tg_compare_error
+		PadLocation: No connect  Bank: Select Bank
+
+
+
+    
+
+
+/*******************************************************/
+/*                  Controller 1                       */
+/*******************************************************/
+Controller Options :
+   Memory                        : DDR3_SDRAM
+   Interface                     : AXI
+   Design Clock Frequency        : 1875 ps (  0.00 MHz)
+   Phy to Controller Clock Ratio : 4:1
+   Input Clock Period            : 5000 ps
+   CLKFBOUT_MULT (PLL)           : 16
+   DIVCLK_DIVIDE (PLL)           : 3
+   VCC_AUX IO                    : 1.8V
+   Memory Type                   : Components
+   Memory Part                   : MT41K256M8XX-125
+   Equivalent Part(s)            : MT41K256M8DA-125
+   Data Width                    : 72
+   ECC                           : Enabled
+   Data Mask                     : disabled
+   ORDERING                      : Normal
+
+AXI Parameters :
+   Data Width                    : 512
+   Arbitration Scheme            : RD_PRI_REG
+   Narrow Burst Support          : 0
+   ID Width                      : 4
+
+Memory Options:
+   Burst Length (MR0[1:0])          : 8 - Fixed
+   Read Burst Type (MR0[3])         : Sequential
+   CAS Latency (MR0[6:4])           : 7
+   Output Drive Strength (MR1[5,1]) : RZQ/7
+   Controller CS option             : Enable
+   Rtt_NOM - ODT (MR1[9,6,2])       : RZQ/4
+   Rtt_WR - Dynamic ODT (MR2[10:9]) : Dynamic ODT off
+   Memory Address Mapping           : BANK_ROW_COLUMN
+
+
+Bank Selections:
+	Bank: 16
+		Byte Group T0:	DQ[0-7]
+		Byte Group T1:	DQ[8-15]
+		Byte Group T2:	DQ[24-31]
+		Byte Group T3:	DQ[64-71]
+	Bank: 17
+		Byte Group T0:	Address/Ctrl-2
+		Byte Group T1:	Address/Ctrl-0
+		Byte Group T2:	Address/Ctrl-1
+		Byte Group T3:	DQ[40-47]
+	Bank: 18
+		Byte Group T0:	DQ[48-55]
+		Byte Group T1:	DQ[56-63]
+		Byte Group T2:	DQ[32-39]
+		Byte Group T3:	DQ[16-23]
+
+System_Clock: 
+	SignalName: c1_sys_clk_p/n
+		PadLocation: G25/G26(CC_P/N)  Bank: 17
+
+
+
+    
